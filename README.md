@@ -17,6 +17,15 @@ Capturas reales del juego (modo WebGL con bloom, realzadas para que el neón res
 | <img src="screenshots/gameplay_early.png" width="480" alt="Gameplay con asteroides"> | <img src="screenshots/pause.png" width="480" alt="Menú de pausa"> |
 | **Gameplay** — ship y asteroides en el espacio | **Menú de pausa** (ESC) con ajustes |
 
+### 🎬 Vídeo de gameplay
+
+<video controls muted poster="screenshots/video_poster.jpg" width="720">
+  <source src="screenshots/asteroids-gameplay.mp4" type="video/mp4">
+  Tu navegador no soporta vídeo HTML5. <a href="screenshots/asteroids-gameplay.mp4">Descargar el vídeo</a>.
+</video>
+
+*Grabación real de una partida (~2 min 49 s, con sonido).*
+
 ### 📷 Cómo se tomaron las capturas
 
 Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un navegador automatizado — nadie las tomó a mano:
