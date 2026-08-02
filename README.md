@@ -129,6 +129,14 @@ Cuando Pablo notó que la grabación mostraba parte de la barra del navegador y 
 
 Un asistente "tradicional" te habría dicho que volvieras a grabar. Este lo analizó, lo entendió y lo arregló solo — detectando, decidiendo, ejecutando y verificando. Eso es automatización agéntica en estado puro. 🎯
 
+### 📊 La prueba del algodón: el contador de OpenCode Go
+
+Todo este proceso — desde la concepción del juego hasta el README, pasando por las capturas, el vídeo y su arreglo — duró algo menos de un par de horas, con Pablo dirigiendo y supervisando cada paso. Y durante todo ese tiempo, un detalle: el autor tenía **un ojo pegado a los medidores de uso de [OpenCode Go](https://opencode.ai/es/go)**, la suscripción que utiliza, observando el consumo de tokens en tiempo real.
+
+La sensación, en sus propias palabras, fue que **las puñeteras barras estaban pegadas con Loctite: apenas se movieron.** 😄
+
+En otras palabras: una sesión de desarrollo completa, con el juego, los assets procedurales, la automatización del navegador, la edición de vídeo y toda la documentación... consumiendo una fracción mínima del presupuesto de la suscripción. Eso es lo que significa "gasta menos que la moto de un jipi" llevado a la práctica. 🌿
+
 ---
 
 ## 🕹️ Cómo jugar
