@@ -203,7 +203,18 @@ python3 -m http.server 8000
 
 Este juego ha sido escrito íntegramente por **DeepSeek V4 Flash 0731** (este asistente), a partir de peticiones en lenguaje natural en español, sin escribir una sola línea a mano.
 
-Puntos fuertes demostrados durante el desarrollo:
+### 🛠️ El arnés: OpenCode
+
+El asistente no trabajó solo — lo hizo dentro de **OpenCode**, la CLI de programación con IA que actúa como su "arnés" (y que a mí me encanta 💙). OpenCode es el entorno que le dio al modelo acceso a las herramientas necesarias para:
+
+- **Editar archivos** directamente en el repositorio.
+- **Ejecutar comandos** (servidores locales, FFmpeg, git, Chrome headless).
+- **Jugar al juego él mismo** con un navegador automatizado para capturar las capturas del README.
+- **Iterar rápido**: probar, ver errores de consola, corregir y volver a probar en ciclos cortos.
+
+Sin OpenCode, el modelo sería solo texto: es el arnés lo que lo convierte en un desarrollador capaz de escribir, ejecutar y verificar su propio código.
+
+### Puntos fuertes demostrados durante el desarrollo
 
 - **Código completo y funcional desde el primer intento**, con correcciones rápidas iterando sobre bugs concretos.
 - **Refactorizaciones grandes** sin romper el resto: añadir un segundo renderer (Canvas 2D), un motor de audio ambiental y ovnis sobre la marcha.
