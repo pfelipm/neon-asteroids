@@ -168,6 +168,14 @@
   #renderBadge.webgl { color:#5ff7ff; text-shadow:0 0 8px #5ff7ff; }
   #renderBadge.canvas { color:#ffe35f; text-shadow:0 0 8px #ffe35f; border-color:rgba(255,227,95,.4); }
   .pu-easy { color:#5ff7ff; } .pu-normal { color:#ffe35f; } .pu-hard { color:#ff5fd0; }
+  /* discreet repo link */
+  .repo-link {
+    position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+    font-size:11px; letter-spacing:2px; opacity:.45;
+    color:#7fa; text-decoration:none; pointer-events:auto;
+    transition:opacity .2s ease, color .2s ease;
+  }
+  .repo-link:hover { opacity:1; color:#9bf6ff; text-shadow:0 0 8px #5ff7ff; }
 </style>
 </head>
 <body>
@@ -216,6 +224,7 @@
     </div>
     <div class="start-prompt">PRESS ENTER TO START</div>
   </div>
+  <a class="repo-link" href="https://github.com/pfelipm/neon-asteroids" target="_blank" rel="noopener">&#11088; github.com/pfelipm/neon-asteroids</a>
 </div>
 
 <div id="renderBadge"></div>
@@ -1012,7 +1021,8 @@ function showWelcome(){
       </div>
       <div class="keys"><b>&larr; &rarr;</b> ROTATE &nbsp; <b>&uarr;</b> THRUST &nbsp; <b>SPACE</b> FIRE &nbsp; <b>Z</b> HYPERSPACE<br><b>ESC</b> / <b>P</b> PAUSE MENU &nbsp; <b>M</b> MUTE &nbsp; <b>R</b> QUIT TO MENU <span style="opacity:.6">(game over / paused only)</span></div>
       <div class="start-prompt">PRESS ENTER TO START</div>
-    </div>`;
+    </div>
+    <a class="repo-link" href="https://github.com/pfelipm/neon-asteroids" target="_blank" rel="noopener">&#11088; github.com/pfelipm/neon-asteroids</a>`;
   bindSettings();
 }
 function showGameOver(){
