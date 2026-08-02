@@ -21,7 +21,9 @@ Capturas reales del juego (modo WebGL con bloom), tal cual salieron del navegado
 
 Vídeo completo (~2 min 49 s, con sonido) en YouTube:
 
-[<img src="screenshots/video_poster.jpg" width="720" alt="Reproducir vídeo de gameplay en YouTube">](https://youtu.be/3zXxPQNaDPs)
+<p align="center">
+  <a href="https://youtu.be/3zXxPQNaDPs"><img src="screenshots/video_poster.jpg" width="720" alt="Reproducir vídeo de gameplay en YouTube"></a>
+</p>
 
 Si el embed no se muestra en tu visor de GitHub, ábrelo directamente: [youtu.be/3zXxPQNaDPs](https://youtu.be/3zXxPQNaDPs)
 
