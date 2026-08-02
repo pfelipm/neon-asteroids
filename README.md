@@ -115,6 +115,20 @@ El vídeo de gameplay que grabó el autor venía en contenedor **MKV** (códec H
    - `-q:v 2` es alta calidad de JPEG (escala 2–31, menor = mejor).
    - Los frames se guardan tal cual, sin post-procesado.
 
+### 🤖 Anécdota: el vídeo se "autoarregló"
+
+Cuando Pablo notó que la grabación mostraba parte de la barra del navegador y un badge cortado en el borde inferior, el asistente **no se limitó a decir "no se puede sin recapturar"**: diagnosticó y arregló el vídeo él mismo con un flujo de automatización agéntica que podría servir de manual:
+
+1. **Inspección**: extrajo fotogramas del vídeo en varios momentos (`ffmpeg -ss <s> -frames:v 1`) y midió el brillo de cada fila con un script Python/Pillow.
+2. **Diagnóstico**: el perfil de brillo reveló la barra del navegador como una franja uniforme (gris ~60-75) en las primeras 20 filas, y el badge del renderer cortado en la esquina inferior izquierda (hasta la última fila del frame).
+3. **Decisión**: en vez de recapturar, calculó un **recorte quirúrgico** — eliminar las filas 0–19 (barra) y la franja inferior del badge, quedando solo el área de juego.
+4. **Ejecución**: aplicó el crop con FFmpeg (`crop=1310:874:0:20`) sobre el MP4 completo.
+5. **Verificación**: re-analizó los frames recortados para confirmar que la barra y el badge habían desaparecido (brillo arriba: de ~60-75 a ~6-12) y que el gameplay seguía intacto.
+6. **Regeneración**: extrajo de nuevo el poster y los 6 frames destacados desde el vídeo ya limpio.
+7. **Cierre**: reemplazó el MP4 local, actualizó el README y documentó el proceso con los comandos exactos.
+
+Un asistente "tradicional" te habría dicho que volvieras a grabar. Este lo analizó, lo entendió y lo arregló solo — detectando, decidiendo, ejecutando y verificando. Eso es automatización agéntica en estado puro. 🎯
+
 ---
 
 ## 🕹️ Cómo jugar
