@@ -170,6 +170,16 @@ Ambos renderers comparten la **misma lógica de juego** (física, colisiones, es
 
 ---
 
+## 🕹️ Jugar en línea
+
+El juego está publicado con **GitHub Pages** — no hace falta clonar nada:
+
+👉 **https://pfelipm.github.io/neon-asteroids/**
+
+Un **GitHub Action** (Workflow) despliega automáticamente cada versión nueva del `index.html`: al hacer push a `main`, la action compila y publica el sitio, de modo que la URL en línea siempre refleja la última versión del código.
+
+---
+
 ## 🚀 Cómo ejecutarlo
 
 Al ser un solo archivo, basta con abrirlo en el navegador. Requiere **conexión a internet** la primera vez para cargar Three.js desde el CDN de unpkg (o un caché posterior):
