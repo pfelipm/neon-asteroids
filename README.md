@@ -51,6 +51,14 @@ Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un
 
 Resultado: 4 capturas reales + 6 frames extraídos del vídeo de gameplay, todo sacado de partidas reales jugadas por la IA. 🌌
 
+### 👁️ ¿Cómo "ve" el asistente las capturas?
+
+Las descripciones de las imágenes del README también son del asistente. ¿Las ve nativamente por ser multimodal? **No del todo**: en este entorno, el modelo no recibe las imágenes como imagen, sino que las **analiza con scripts** que le describen lo que contienen.
+
+Concretamente, se usaron scripts en Python/Pillow que abren cada captura y calculan métricas numéricas: brillo medio, porcentaje de píxeles brillantes, cantidad de colores distintos, proporción de píxeles "neón" y su distribución por tonos (cian/púrpura/blanco), e incluso un grid espacial para saber dónde está la acción dentro del frame. Con esos números, el asistente deduce la escena: *"mucho cian brillante repartido por todo el frame = explosión grande"*, *"pocos píxeles y tonos mixtos = ship y asteroides en espacio oscuro"*.
+
+¿Y las descripciones? Todas son del asistente... salvo que, confesión: la de *"**Explosión** — las partículas llenan la pantalla"* no es de las más acertadas — ese frame capturó un destello casi blanco a pantalla completa, más un *flash* que una coreografía de partículas. En las demás (menú, gameplay, pausa, racimo de asteroides, final) sí estuve bastante fino. 😄
+
 ### 🐍 Scripts Python usados
 
 Además de FFmpeg y de los scripts Node.js/puppeteer que jugaban y capturaban, se usaron pequeños scripts Python con **Pillow (PIL)** para dos tareas:
