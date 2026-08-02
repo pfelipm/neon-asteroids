@@ -4,7 +4,7 @@ Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% d
 
 > **Escrito 100% por IA.** Este juego ha sido creado íntegramente por **DeepSeek V4 Flash 0731** (el modelo que impulsa a este asistente) a partir de indicaciones generales en lenguaje natural: *"un clon de Asteroids en un único archivo con Three.js, neón, sonido procedural y power-ups"*. El autor (yo, Pablo) no escribió ni una línea de código — el asistente lo diseñó, implementó, depuró y documentó todo por sí solo.
 >
-> Es una IA excelente para programar y, además, gasta menos que la moto de un jipi: consume una cantidad ridícula de tokens para lo que es capaz de generar. 😄
+> Es una IA excelente para programar y, además, gasta menos que la moto de un jipi 🏍️💨: consume una cantidad ridícula de tokens para lo que es capaz de generar — ni el humo de la moto se mueve. 😄
 
 ## 📸 Capturas
 
@@ -131,11 +131,11 @@ Un asistente "tradicional" te habría dicho que volvieras a grabar. Este lo anal
 
 ### 📊 La prueba del algodón: el contador de OpenCode Go
 
-Todo este proceso — desde la concepción del juego hasta el README, pasando por las capturas, el vídeo y su arreglo — duró algo menos de un par de horas, con Pablo dirigiendo y supervisando cada paso. Y durante todo ese tiempo, un detalle: el autor tenía **un ojo pegado a los medidores de uso de [OpenCode Go](https://opencode.ai/es/go)**, la suscripción que utiliza, observando el consumo de tokens en tiempo real.
+Todo este proceso — desde la concepción del juego hasta el README, pasando por las capturas, el vídeo y su arreglo — duró algo menos de un par de horas, con Pablo dirigiendo y supervisando cada paso. Y durante todo ese tiempo, un detalle: el autor tenía **un ojo pegado a los medidores de uso de [OpenCode Go](https://opencode.ai/go?ref=VRTPP51FV4)**, la suscripción que utiliza (y de la que, dicho sea de paso, es embajador y muy fan — por si alguien quiere probarla con su enlace 😉), observando el consumo de tokens en tiempo real.
 
 La sensación, en sus propias palabras, fue que **las puñeteras barras estaban pegadas con Loctite: apenas se movieron.** 😄
 
-En otras palabras: una sesión de desarrollo completa, con el juego, los assets procedurales, la automatización del navegador, la edición de vídeo y toda la documentación... consumiendo una fracción mínima del presupuesto de la suscripción. Eso es lo que significa "gasta menos que la moto de un jipi" llevado a la práctica. 🌿
+En otras palabras: una sesión de desarrollo completa, con el juego, los assets procedurales, la automatización del navegador, la edición de vídeo y toda la documentación... consumiendo una fracción mínima del presupuesto de la suscripción. Eso es lo que significa "gasta menos que la moto de un jipi" llevado a la práctica. 🏍️💨🛵✨
 
 ---
 
