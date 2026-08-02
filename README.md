@@ -19,11 +19,11 @@ Capturas reales del juego (modo WebGL con bloom), tal cual salieron del navegado
 
 ### 🎬 Vídeo de gameplay
 
-Haz clic en la imagen para reproducir el vídeo (MP4, ~2 min 49 s, con sonido):
+Vídeo completo (~2 min 49 s, con sonido) en YouTube:
 
-[<img src="screenshots/video_poster.jpg" width="720" alt="Reproducir vídeo de gameplay">](screenshots/asteroids-gameplay.mp4)
+[<img src="screenshots/video_poster.jpg" width="720" alt="Reproducir vídeo de gameplay en YouTube">](https://youtu.be/3zXxPQNaDPs)
 
-Si el enlace no funciona, descárgalo directamente: [asteroids-gameplay.mp4](screenshots/asteroids-gameplay.mp4)
+Si el embed no se muestra en tu visor de GitHub, ábrelo directamente: [youtu.be/3zXxPQNaDPs](https://youtu.be/3zXxPQNaDPs)
 
 ### 🖼️ Frames destacados del vídeo
 
