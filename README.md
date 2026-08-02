@@ -19,12 +19,24 @@ Capturas reales del juego (modo WebGL con bloom, realzadas para que el neón res
 
 ### 🎬 Vídeo de gameplay
 
-<video controls muted poster="screenshots/video_poster.jpg" width="720">
-  <source src="screenshots/asteroids-gameplay.mp4" type="video/mp4">
-  Tu navegador no soporta vídeo HTML5. <a href="screenshots/asteroids-gameplay.mp4">Descargar el vídeo</a>.
-</video>
+Haz clic en la imagen para reproducir el vídeo (MP4, ~2 min 49 s, con sonido):
 
-*Grabación real de una partida (~2 min 49 s, con sonido).*
+[<img src="screenshots/video_poster.jpg" width="720" alt="Reproducir vídeo de gameplay">](screenshots/asteroids-gameplay.mp4)
+
+Si el enlace no funciona, descárgalo directamente: [asteroids-gameplay.mp4](screenshots/asteroids-gameplay.mp4)
+
+### 🖼️ Frames destacados del vídeo
+
+Momentos capturados de la propia grabación (realzados para resaltar el neón):
+
+| | |
+|---|---|
+| <img src="screenshots/frame_gameplay_a.png" width="480" alt="Gameplay en el vídeo"> | <img src="screenshots/frame_gameplay_b.png" width="480" alt="Gameplay en el vídeo"> |
+| **02:04** — gameplay en acción | **02:10** — gameplay en acción |
+| <img src="screenshots/frame_action.png" width="480" alt="Explosión a pantalla completa"> | <img src="screenshots/frame_cluster.png" width="480" alt="Racimo de asteroides"> |
+| **02:15** — explosión a pantalla completa | **02:23** — racimo de asteroides |
+| <img src="screenshots/frame_explosion.png" width="480" alt="Explosión"> | <img src="screenshots/frame_finale.png" width="480" alt="Final"> |
+| **01:05** — explosión | **02:25** — final de partida |
 
 ### 📷 Cómo se tomaron las capturas
 
@@ -37,7 +49,39 @@ Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un
 5. **Menú de pausa**: se pulsó `ESC` durante la partida y se capturó el overlay de pausa.
 6. **Post-proceso**: las imágenes se realzaron (brillo, contraste y saturación) con Python/Pillow para que las líneas de neón, que son finas sobre fondo negro, resalten en la pantalla del README.
 
-Resultado: 4 capturas reales, no maquetadas, sacadas de una partida real jugada por la IA. 🌌
+Resultado: 4 capturas reales + 6 frames extraídos del vídeo de gameplay, todo sacado de partidas reales jugadas por la IA. 🌌
+
+### 🎬 Cómo se convirtió el vídeo y se extrajeron los frames
+
+El vídeo que grabaste venía en contenedor **MKV** (códec H.264 + Opus, 70 MB), que muchos navegadores no reproducen en línea y GitHub sirve como archivo plano. El asistente lo convirtió y extrajo fotogramas con **FFmpeg**:
+
+1. **Conversión MKV → MP4** para máxima compatibilidad:
+   ```
+   ffmpeg -i asteroids-gameply.mkv \
+     -c:v libx264 -preset medium -crf 20 -pix_fmt yuv420p \
+     -movflags +faststart -c:a aac -b:a 160k asteroids-gameplay.mp4
+   ```
+   - `libx264` re-codifica el vídeo H.264 manteniendo calidad (`crf 20`).
+   - `yuv420p` garantiza compatibilidad con todos los reproductores.
+   - `aac` convierte el audio Opus a AAC (estándar en MP4).
+   - `+faststart` mueve el índice al principio para que el vídeo arranque rápido al reproducirse en el navegador.
+   - Resultado: **34 MB** (desde 70 MB).
+
+2. **Poster frame** (imagen previa del vídeo):
+   ```
+   ffmpeg -i asteroids-gameplay.mp4 -ss 40 -frames:v 1 -q:v 3 video_poster.jpg
+   ```
+   Extrae un solo fotograma (`-frames:v 1`) en el segundo 40 (`-ss 40`) como imagen de portada.
+
+3. **Frames destacados** en los momentos que indicaste (01:05, 02:04, 02:10, 02:15, 02:23, 02:25):
+   ```
+   ffmpeg -ss 65 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_65s.png
+   ffmpeg -ss 124 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_124s.png
+   ... (mismo comando con -ss 130, 135, 143, 145)
+   ```
+   - `-ss` busca directamente al segundo indicado antes de decodificar (rápido y preciso).
+   - `-q:v 2` es alta calidad de JPEG (escala 2–31, menor = mejor).
+   - Cada imagen se realzó después con Python/Pillow (brillo 1.8, contraste 1.35, saturación 1.25) para que el neón resalte en el README.
 
 ---
 
