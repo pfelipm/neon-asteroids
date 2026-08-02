@@ -161,7 +161,7 @@ Ambos renderers comparten la **misma lógica de juego** (física, colisiones, es
 ## ⚙️ Detalles técnicos
 
 - **Un solo archivo**: `index.html` (~2.000 líneas) con todo el CSS, HTML y JS embebido.
-- **Librerías**: Three.js + addons (`EffectComposer`, `RenderPass`, `UnrealBloomPass`) cargados **dinámicamente** con `import()` vía import map — si eliges Canvas 2D, Three.js ni siquiera se descarga.
+- **Librerías**: Three.js + addons (`EffectComposer`, `RenderPass`, `UnrealBloomPass`) **alojados localmente en `vendor/`** (sin CDN), cargados **dinámicamente** con `import()` vía import map — si eliges Canvas 2D, Three.js ni siquiera se importa. Esto hace que el juego funcione **100% offline**.
 - **Formas procedurales**: el *ship*, los asteroides, los power-ups y los ovnis son polígonos generados con `Math.random()` y *seeds* deterministas (el mismo asteroide siempre tiene la misma forma).
 - **Colisiones**: por círculos en 2D con *screen wrapping* (el mundo envuelve en los bordes).
 - **Física** simplificada de Asteroids: inercia, rozamiento exponencial, velocidad máxima, división de asteroides.
@@ -182,7 +182,7 @@ Un **GitHub Action** (Workflow) despliega automáticamente cada versión nueva d
 
 ## 🚀 Cómo ejecutarlo
 
-Al ser un solo archivo, basta con abrirlo en el navegador. Requiere **conexión a internet** la primera vez para cargar Three.js desde el CDN de unpkg (o un caché posterior):
+Al ser un solo archivo, basta con abrirlo en el navegador. **Three.js está alojado localmente** en `vendor/`, así que **no necesita conexión a internet**:
 
 ```
 xdg-open index.html
