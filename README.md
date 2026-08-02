@@ -8,7 +8,7 @@ Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% d
 
 ## 📸 Capturas
 
-Capturas reales del juego (modo WebGL con bloom, realzadas para que el neón resalte):
+Capturas reales del juego (modo WebGL con bloom), tal cual salieron del navegador:
 
 | | |
 |---|---|
@@ -27,7 +27,7 @@ Si el enlace no funciona, descárgalo directamente: [asteroids-gameplay.mp4](scr
 
 ### 🖼️ Frames destacados del vídeo
 
-Momentos capturados de la propia grabación (realzados para resaltar el neón):
+Momentos capturados de la propia grabación (tal cual, sin post-procesado):
 
 | | |
 |---|---|
@@ -47,9 +47,24 @@ Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un
 3. **Se jugó de verdad**: el script mantuvo pulsada la propulsión (`↑`) y el disparo (`SPACE`) durante ~90 segundos, alternando la rotación (`←`/`→`) en barridos orbitales amplios y disparando el hiperespacio (`Z`) de forma aleatoria, mientras capturaba una captura cada 2 segundos (~30 frames de acción).
 4. **Selección automática de los mejores frames**: como el modelo no puede "ver" las imágenes directamente, cada frame se analizó por histogramas de brillo, saturación, recuento de colores distintos y porcentaje de píxeles "neón" (canal RGB > 120), para quedarse con los más vistosos — incluyendo el frame de la **explosión a pantalla completa**.
 5. **Menú de pausa**: se pulsó `ESC` durante la partida y se capturó el overlay de pausa.
-6. **Post-proceso**: las imágenes se realzaron (brillo, contraste y saturación) con Python/Pillow para que las líneas de neón, que son finas sobre fondo negro, resalten en la pantalla del README.
+6. **Sin post-procesado**: las capturas se muestran tal cual salieron del navegador y del vídeo, sin retoques.
 
 Resultado: 4 capturas reales + 6 frames extraídos del vídeo de gameplay, todo sacado de partidas reales jugadas por la IA. 🌌
+
+### 🐍 Scripts Python usados
+
+Además de FFmpeg y de los scripts Node.js/puppeteer que jugaban y capturaban, se usaron pequeños scripts Python con **Pillow (PIL)** para dos tareas:
+
+1. **Análisis y selección de frames** (`Image` + `getdata`): abría cada captura, la reducía a una muestra y calculaba métricas para decidir cuáles valían la pena:
+   - **Brillo medio** de todos los píxeles.
+   - **% de píxeles brillantes** (`sum(rgb)/3 > 60`) — indica cuánta acción visible hay.
+   - **Colores distintos** (`len(set(pixels))`) — cuánto contenido hay.
+   - **% de píxeles "neón"** (canal máximo > 120) y distribución por tonos (cian/morado/blanco) para distinguir explosiones reales de destellos lavados.
+   - También se hizo un **análisis espacial** (grid 12×8 de presencia de neón) para comprobar si la nave y los asteroides estaban centrados o si el frame era solo fondo vacío.
+
+2. **Verificación de contenido** del vídeo: tras extraer los frames con FFmpeg, un script comprobaba que cada uno tuviera píxeles de neón reales y no fueran frames negros o en blanco.
+
+> Al principio se aplicaba un realce (brillo/contraste/saturación) para que el neón resaltara, pero se ha descartado: las capturas del repo son **tal cual**, sin post-procesado.
 
 ### 🎬 Cómo se convirtió el vídeo y se extrajeron los frames
 
@@ -81,7 +96,7 @@ El vídeo que grabaste venía en contenedor **MKV** (códec H.264 + Opus, 70 MB)
    ```
    - `-ss` busca directamente al segundo indicado antes de decodificar (rápido y preciso).
    - `-q:v 2` es alta calidad de JPEG (escala 2–31, menor = mejor).
-   - Cada imagen se realzó después con Python/Pillow (brillo 1.8, contraste 1.35, saturación 1.25) para que el neón resalte en el README.
+   - Los frames se guardan tal cual, sin post-procesado.
 
 ---
 
@@ -184,4 +199,4 @@ Puntos fuertes demostrados durante el desarrollo:
 - **Refactorizaciones grandes** sin romper el resto: añadir un segundo renderer (Canvas 2D), un motor de audio ambiental y ovnis sobre la marcha.
 - **Síntesis de audio y geometría procedural** sin depender de assets externos.
 - **Ajuste fino de UX/UI**: menús, hints de teclas, indicadores, estados.
-- Y todo ello **consumiendo una cantidad ridículamente baja de tokens** — como se suele decir, gasta menos que la moto de un jipi. 🌿
+- Y todo ello **consumiendo una cantidad ridículamente baja de tokens** (ver la cita al inicio). 🌿
