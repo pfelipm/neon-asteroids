@@ -92,13 +92,20 @@ El vídeo de gameplay que grabó el autor venía en contenedor **MKV** (códec H
    - `+faststart` mueve el índice al principio para que el vídeo arranque rápido al reproducirse en el navegador.
    - Resultado: **34 MB** (desde 70 MB).
 
-2. **Poster frame** (imagen previa del vídeo):
+2. **Recorte del encuadre** para eliminar la barra del navegador y el badge cortado:
+   ```
+   ffmpeg -i asteroids-gameplay.mp4 -vf "crop=1310:874:0:20" \
+     -c:v libx264 -crf 20 -pix_fmt yuv420p -c:a copy asteroids-gameplay_clean.mp4
+   ```
+   La grabación de pantalla incluía la barra del navegador en la parte superior (20 px) y el badge del renderer cortado en la inferior. El recorte (`crop=ancho:alto:x:y`) elimina ambas franjas dejando solo el área de juego.
+
+3. **Poster frame** (imagen previa del vídeo):
    ```
    ffmpeg -i asteroids-gameplay.mp4 -ss 40 -frames:v 1 -q:v 3 video_poster.jpg
    ```
    Extrae un solo fotograma (`-frames:v 1`) en el segundo 40 (`-ss 40`) como imagen de portada.
 
-3. **Frames destacados** en los momentos indicados por el autor (01:05, 02:04, 02:10, 02:15, 02:23, 02:25):
+4. **Frames destacados** en los momentos indicados por el autor (01:05, 02:04, 02:10, 02:15, 02:23, 02:25):
    ```
    ffmpeg -ss 65 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_65s.png
    ffmpeg -ss 124 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_124s.png
