@@ -4,6 +4,17 @@ Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% d
 
 > Este proyecto se ha creado para poner a prueba a **DeepSeek V4 Flash 0731** — el modelo que impulsa a este asistente. Es una IA excelente para programar y, además, gasta menos que la mota de un jipi: consume una cantidad ridícula de tokens para lo que es capaz de generar. 😄
 
+## 📸 Capturas
+
+Capturas reales del juego (modo WebGL con bloom, realzadas para que el neón resalte):
+
+| | |
+|---|---|
+| <img src="screenshots/welcome.png" width="480" alt="Menú principal"> | <img src="screenshots/gameplay.png" width="480" alt="Explosión a pantalla completa"> |
+| **Menú principal** — asteroides a la deriva y neón | **Explosión** — las partículas llenan la pantalla |
+| <img src="screenshots/gameplay_early.png" width="480" alt="Gameplay con asteroides"> | <img src="screenshots/pause.png" width="480" alt="Menú de pausa"> |
+| **Gameplay** — ship y asteroides en el espacio | **Menú de pausa** (ESC) con ajustes |
+
 ---
 
 ## 🕹️ Cómo jugar
