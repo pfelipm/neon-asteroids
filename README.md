@@ -2,7 +2,7 @@
 
 Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% de forma procedimental** y contenido en un **único archivo `index.html`**. Sin sprites, sin pistas de audio, sin librerías externas a las del propio Three.js — todo (formas, partículas, sonidos y música) se sintetiza en tiempo real.
 
-> **Escrito 100% por IA.** Este juego ha sido creado íntegramente por **DeepSeek V4 Flash 0731** (el modelo que impulsa a este asistente) a partir de indicaciones generales en lenguaje natural: *"un clon de Asteroids en un único archivo con Three.js, neón, sonido procedural y power-ups"*. Yo no escribí ni una línea de código — el asistente lo diseñó, implementó, depuró y documentó todo por sí solo.
+> **Escrito 100% por IA.** Este juego ha sido creado íntegramente por **DeepSeek V4 Flash 0731** (el modelo que impulsa a este asistente) a partir de indicaciones generales en lenguaje natural: *"un clon de Asteroids en un único archivo con Three.js, neón, sonido procedural y power-ups"*. El autor (yo, Pablo) no escribió ni una línea de código — el asistente lo diseñó, implementó, depuró y documentó todo por sí solo.
 >
 > Es una IA excelente para programar y, además, gasta menos que la moto de un jipi: consume una cantidad ridícula de tokens para lo que es capaz de generar. 😄
 
@@ -59,7 +59,7 @@ Las descripciones de las imágenes del README también son del asistente. ¿Las 
 
 Concretamente, se usaron scripts en Python/Pillow que abren cada captura y calculan métricas numéricas: brillo medio, porcentaje de píxeles brillantes, cantidad de colores distintos, proporción de píxeles "neón" y su distribución por tonos (cian/púrpura/blanco), e incluso un grid espacial para saber dónde está la acción dentro del frame. Con esos números, el asistente deduce la escena: *"mucho cian brillante repartido por todo el frame = explosión grande"*, *"pocos píxeles y tonos mixtos = ship y asteroides en espacio oscuro"*.
 
-¿Y las descripciones? Todas son del asistente... salvo que, confesión: la de *"**Explosión** — las partículas llenan la pantalla"* no es de las más acertadas — ese frame capturó un destello casi blanco a pantalla completa, más un *flash* que una coreografía de partículas. En las demás (menú, gameplay, pausa, racimo de asteroides, final) sí estuve bastante fino. 😄
+¿Y las descripciones? Todas son del asistente... salvo que, confesión (en sus palabras): la de *"**Explosión** — las partículas llenan la pantalla"* no es de las más acertadas — ese frame capturó un destello casi blanco a pantalla completa, más un *flash* que una coreografía de partículas. En las demás (menú, gameplay, pausa, racimo de asteroides, final) sí estuvo bastante fino. 😄
 
 ### 🐍 Scripts Python usados
 
@@ -78,7 +78,7 @@ Además de FFmpeg y de los scripts Node.js/puppeteer que jugaban y capturaban, s
 
 ### 🎬 Cómo se convirtió el vídeo y se extrajeron los frames
 
-El vídeo que grabaste venía en contenedor **MKV** (códec H.264 + Opus, 70 MB), que muchos navegadores no reproducen en línea y GitHub sirve como archivo plano. El asistente lo convirtió y extrajo fotogramas con **FFmpeg**:
+El vídeo de gameplay que grabó el autor venía en contenedor **MKV** (códec H.264 + Opus, 70 MB), que muchos navegadores no reproducen en línea y GitHub sirve como archivo plano. El asistente lo convirtió y extrajo fotogramas con **FFmpeg**:
 
 1. **Conversión MKV → MP4** para máxima compatibilidad:
    ```
@@ -98,7 +98,7 @@ El vídeo que grabaste venía en contenedor **MKV** (códec H.264 + Opus, 70 MB)
    ```
    Extrae un solo fotograma (`-frames:v 1`) en el segundo 40 (`-ss 40`) como imagen de portada.
 
-3. **Frames destacados** en los momentos que indicaste (01:05, 02:04, 02:10, 02:15, 02:23, 02:25):
+3. **Frames destacados** en los momentos indicados por el autor (01:05, 02:04, 02:10, 02:15, 02:23, 02:25):
    ```
    ffmpeg -ss 65 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_65s.png
    ffmpeg -ss 124 -i asteroids-gameplay.mp4 -frames:v 1 -q:v 2 frame_124s.png
@@ -215,7 +215,7 @@ Este juego ha sido escrito íntegramente por **DeepSeek V4 Flash 0731** (este as
 
 ### 🛠️ El arnés: OpenCode
 
-El asistente no trabajó solo — lo hizo dentro de **OpenCode**, la CLI de programación con IA que actúa como su "arnés" (y que a mí me encanta 💙). OpenCode es el entorno que le dio al modelo acceso a las herramientas necesarias para:
+El asistente no trabajó solo — lo hizo dentro de **OpenCode**, la CLI de programación con IA que actúa como su "arnés" (y que a mí, su autor, me encanta 💙). OpenCode es el entorno que le dio al modelo acceso a las herramientas necesarias para:
 
 - **Editar archivos** directamente en el repositorio.
 - **Ejecutar comandos** (servidores locales, FFmpeg, git, Chrome headless).
