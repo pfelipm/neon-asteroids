@@ -2,7 +2,9 @@
 
 Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% de forma procedimental** y contenido en un **único archivo `index.html`**. Sin sprites, sin pistas de audio, sin librerías externas a las del propio Three.js — todo (formas, partículas, sonidos y música) se sintetiza en tiempo real.
 
-> Este proyecto se ha creado para poner a prueba a **DeepSeek V4 Flash 0731** — el modelo que impulsa a este asistente. Es una IA excelente para programar y, además, gasta menos que la mota de un jipi: consume una cantidad ridícula de tokens para lo que es capaz de generar. 😄
+> **Escrito 100% por IA.** Este juego ha sido creado íntegramente por **DeepSeek V4 Flash 0731** (el modelo que impulsa a este asistente) a partir de indicaciones generales en lenguaje natural: *"un clon de Asteroids en un único archivo con Three.js, neón, sonido procedural y power-ups"*. Yo no escribí ni una línea de código — el asistente lo diseñó, implementó, depuró y documentó todo por sí solo.
+>
+> Es una IA excelente para programar y, además, gasta menos que la moto de un jipi: consume una cantidad ridícula de tokens para lo que es capaz de generar. 😄
 
 ## 📸 Capturas
 
@@ -14,6 +16,19 @@ Capturas reales del juego (modo WebGL con bloom, realzadas para que el neón res
 | **Menú principal** — asteroides a la deriva y neón | **Explosión** — las partículas llenan la pantalla |
 | <img src="screenshots/gameplay_early.png" width="480" alt="Gameplay con asteroides"> | <img src="screenshots/pause.png" width="480" alt="Menú de pausa"> |
 | **Gameplay** — ship y asteroides en el espacio | **Menú de pausa** (ESC) con ajustes |
+
+### 📷 Cómo se tomaron las capturas
+
+Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un navegador automatizado — nadie las tomó a mano:
+
+1. **Automatización**: se lanzó Chrome en modo *headless* (sin ventana) a 1920×1080 mediante `puppeteer-core` (Chrome DevTools Protocol), apuntando a un servidor local con el juego.
+2. **Selección de modo y arranque**: en la pantalla de bienvenida se pulsó el botón de dificultad *HARD* (4 asteroides iniciales) y luego `ENTER` para empezar la partida.
+3. **Se jugó de verdad**: el script mantuvo pulsada la propulsión (`↑`) y el disparo (`SPACE`) durante ~90 segundos, alternando la rotación (`←`/`→`) en barridos orbitales amplios y disparando el hiperespacio (`Z`) de forma aleatoria, mientras capturaba una captura cada 2 segundos (~30 frames de acción).
+4. **Selección automática de los mejores frames**: como el modelo no puede "ver" las imágenes directamente, cada frame se analizó por histogramas de brillo, saturación, recuento de colores distintos y porcentaje de píxeles "neón" (canal RGB > 120), para quedarse con los más vistosos — incluyendo el frame de la **explosión a pantalla completa**.
+5. **Menú de pausa**: se pulsó `ESC` durante la partida y se capturó el overlay de pausa.
+6. **Post-proceso**: las imágenes se realzaron (brillo, contraste y saturación) con Python/Pillow para que las líneas de neón, que son finas sobre fondo negro, resalten en la pantalla del README.
+
+Resultado: 4 capturas reales, no maquetadas, sacadas de una partida real jugada por la IA. 🌌
 
 ---
 
@@ -116,4 +131,4 @@ Puntos fuertes demostrados durante el desarrollo:
 - **Refactorizaciones grandes** sin romper el resto: añadir un segundo renderer (Canvas 2D), un motor de audio ambiental y ovnis sobre la marcha.
 - **Síntesis de audio y geometría procedural** sin depender de assets externos.
 - **Ajuste fino de UX/UI**: menús, hints de teclas, indicadores, estados.
-- Y todo ello **consumiendo una cantidad ridículamente baja de tokens** — como se suele decir, gasta menos que la mota de un jipi. 🌿
+- Y todo ello **consumiendo una cantidad ridículamente baja de tokens** — como se suele decir, gasta menos que la moto de un jipi. 🌿
