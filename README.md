@@ -131,7 +131,9 @@ Un asistente "tradicional" te habría dicho que volvieras a grabar. Este lo anal
 
 ### 📊 La prueba del algodón: el contador de OpenCode Go
 
-Todo este proceso — desde la concepción del juego hasta el README, pasando por las capturas, el vídeo y su arreglo — duró algo menos de un par de horas, con Pablo dirigiendo y supervisando cada paso. Y durante todo ese tiempo, un detalle: el autor tenía **un ojo pegado a los medidores de uso de [OpenCode Go](https://opencode.ai/go?ref=VRTPP51FV4)**, la suscripción que utiliza (y de la que, dicho sea de paso, es embajador y muy fan — por si alguien quiere probarla con su enlace 😉), observando el consumo de tokens en tiempo real.
+Todo este proceso — desde la concepción del juego hasta el README, pasando por las capturas, el vídeo y su arreglo — duró algo menos de un par de horas, con Pablo dirigiendo y supervisando cada paso. Y durante todo ese tiempo, un detalle: el autor tenía **un ojo pegado a los medidores de uso de [OpenCode Go](https://opencode.ai/go?ref=VRTPP51FV4)**, la suscripción que utiliza, observando el consumo de tokens en tiempo real.
+
+> Nota: Pablo es un **embajador aficionado** — un usuario muy fan de OpenCode, pero sin ninguna relación oficial ni participación en programa alguno de la empresa. El enlace de arriba es simplemente su enlace de referencia por si alguien quiere probar la suscripción; todo el entusiasmo es genuino y desinteresado. 😄
 
 La sensación, en sus propias palabras, fue que **las puñeteras barras estaban pegadas con Loctite: apenas se movieron.** 😄
 
