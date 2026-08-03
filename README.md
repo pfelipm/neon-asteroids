@@ -8,7 +8,9 @@ Clásico *Asteroids* con estética **retro-moderna de neón**, generado **100% d
 
 ## 📸 Capturas
 
-Capturas reales del juego (modo WebGL con bloom), tal cual salieron del navegador:
+### Capturas tomadas por el asistente
+
+Estas 4 las hizo el propio asistente, **jugando al juego de verdad** con un navegador headless automatizado (modo WebGL con bloom), tal cual salieron del navegador:
 
 | | |
 |---|---|
@@ -27,9 +29,9 @@ Vídeo completo (~2 min 49 s, con sonido) en YouTube:
 
 Si el embed no se muestra en tu visor de GitHub, ábrelo directamente: [youtu.be/S3wVw6_6gLU](https://youtu.be/S3wVw6_6gLU)
 
-### 🖼️ Frames destacados del vídeo
+### 🖼️ Frames extraídos del vídeo de Pablo
 
-Momentos capturados de la propia grabación (tal cual, sin post-procesado):
+Estas 6 las extrajo el asistente a partir del **vídeo de gameplay que grabó el autor** (Pablo) con su capturador de pantalla. Son fotogramas de la grabación, tal cual, sin post-procesado:
 
 | | |
 |---|---|
@@ -42,16 +44,21 @@ Momentos capturados de la propia grabación (tal cual, sin post-procesado):
 
 ### 📷 Cómo se tomaron las capturas
 
-Las capturas las hizo el propio asistente, **jugando al juego de verdad** con un navegador automatizado — nadie las tomó a mano:
+Hay dos orígenes distintos:
+
+**A) Las 4 capturas "de navegador" las tomó el asistente**, jugando al juego de verdad con un navegador automatizado — nadie las hizo a mano:
 
 1. **Automatización**: se lanzó Chrome en modo *headless* (sin ventana) a 1920×1080 mediante `puppeteer-core` (Chrome DevTools Protocol), apuntando a un servidor local con el juego.
 2. **Selección de modo y arranque**: en la pantalla de bienvenida se pulsó el botón de dificultad *HARD* (4 asteroides iniciales) y luego `ENTER` para empezar la partida.
 3. **Se jugó de verdad**: el script mantuvo pulsada la propulsión (`↑`) y el disparo (`SPACE`) durante ~90 segundos, alternando la rotación (`←`/`→`) en barridos orbitales amplios y disparando el hiperespacio (`Z`) de forma aleatoria, mientras capturaba una captura cada 2 segundos (~30 frames de acción).
 4. **Selección automática de los mejores frames**: como el modelo no puede "ver" las imágenes directamente, cada frame se analizó por histogramas de brillo, saturación, recuento de colores distintos y porcentaje de píxeles "neón" (canal RGB > 120), para quedarse con los más vistosos — incluyendo el frame de la **explosión a pantalla completa**.
 5. **Menú de pausa**: se pulsó `ESC` durante la partida y se capturó el overlay de pausa.
-6. **Sin post-procesado**: las capturas se muestran tal cual salieron del navegador y del vídeo, sin retoques.
 
-Resultado: 4 capturas reales + 6 frames extraídos del vídeo de gameplay, todo sacado de partidas reales jugadas por la IA. 🌌
+**B) Las 6 capturas "de vídeo" las extrajo el asistente de una grabación real que hizo Pablo** con su capturador de pantalla (el mismo gameplay que está en YouTube). El asistente solo seleccionó los momentos (01:05, 02:04, 02:10, 02:15, 02:23, 02:25) y extrajo los fotogramas.
+
+En ambos casos, **sin post-procesado**: las imágenes se muestran tal cual salieron del navegador y del vídeo, sin retoques.
+
+Resultado: 4 capturas jugadas por la IA + 6 frames de una partida grabada por el autor. 🌌
 
 ### 👁️ ¿Cómo "ve" el asistente las capturas?
 
